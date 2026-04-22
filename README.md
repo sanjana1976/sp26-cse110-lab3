@@ -1,1 +1,2 @@
-# sp26-cse110-lab3
+# Lab 2 - Starter
+# url: https://sanjana1976.github.io/Lab2_Starter/
