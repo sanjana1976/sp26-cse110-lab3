@@ -4,19 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Clock — Brainstorming Meeting Minutes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      .internal-style-example {
+        border-bottom: 2px dashed #3f37c9;
+      }
+    </style>
   </head>
   <body>
-    <header>
+    <header id="page-top">
       <h1>Student Clock First Brainstorm</h1>
       <h2>Product scope, dashboard rules, and MVP architecture</h2>
       <p>
         <strong>Date:</strong>
         <time datetime="2026-04-14">April 14, 2026</time>
       </p>
+      <p class="internal-style-example">Internal style tag example: this sentence gets its dashed underline from the <code>&lt;style&gt;</code> element in the page head.</p>
     </header>
 
     <main>
-      <section aria-labelledby="attendance-heading">
+      <section aria-labelledby="attendance-heading" class="minutes-section card" data-section="attendance">
         <h2 id="attendance-heading">Attendance</h2>
         <ul>
           <li>Rushil Gupta (Team 16)</li>
@@ -28,7 +38,7 @@
         </ul>
       </section>
 
-      <section aria-labelledby="agenda-heading">
+      <section aria-labelledby="agenda-heading" class="minutes-section card" data-section="agenda">
         <h2 id="agenda-heading">Agenda</h2>
         <ol>
           <li>Confirm the problem space: coursework organization, deadlines, and study-hour realism</li>
@@ -38,7 +48,7 @@
         </ol>
       </section>
 
-      <section aria-labelledby="unfinished-heading">
+      <section aria-labelledby="unfinished-heading" class="minutes-section card" data-section="unfinished">
         <h2 id="unfinished-heading">Unfinished business (from last meeting)</h2>
         <ul>
           <li>Whether “Series” should own late policies and ordering for related assignments — <em>agreed: yes, series groups share policies and can enforce sequential expectations.</em></li>
@@ -46,7 +56,7 @@
         </ul>
       </section>
 
-      <section aria-labelledby="new-business-heading">
+      <section aria-labelledby="new-business-heading" class="minutes-section card" data-section="new-business">
         <h2 id="new-business-heading">New business</h2>
         <ul>
           <li>Prototype weekly study-hour configuration and “remaining hours this week” behavior in the model.</li>
@@ -55,7 +65,7 @@
         </ul>
       </section>
 
-      <section aria-labelledby="misc-heading">
+      <section aria-labelledby="misc-heading" class="minutes-section card" data-section="misc">
         <h2 id="misc-heading">Comments, questions, and concerns</h2>
         <ul>
           <li>Shruti asked how manual time entry and work logging stay consistent with dashboard urgency if users forget to log sessions.</li>
@@ -64,8 +74,11 @@
         </ul>
       </section>
 
-      <section aria-labelledby="media-heading">
+      <section aria-labelledby="media-heading" class="minutes-section card" data-section="media">
         <h2 id="media-heading">Meeting recordings</h2>
+        <p style="background-color: #fff8e6;">
+          Inline style example: this paragraph background is set with the <code>style</code> attribute.
+        </p>
         <p>
           Below are sample media elements for practice with <code>audio</code> and <code>video</code>.
           Sources are short, publicly hosted clips (not production meeting footage).
@@ -86,7 +99,7 @@
         </video>
       </section>
 
-      <section aria-labelledby="diagrams-heading">
+      <section aria-labelledby="diagrams-heading" class="minutes-section card" data-section="diagrams">
         <h2 id="diagrams-heading">Diagrams and materials from the meeting</h2>
         <p>Whiteboard reference after the call (layering discussion for Student Clock):</p>
         <figure>
@@ -107,10 +120,51 @@
           <figcaption>Example state-chart style notes for not started, in progress, due soon, and overdue paths—used to sanity-check what the dashboard should highlight first.</figcaption>
         </figure>
       </section>
+
+      <section aria-labelledby="quick-actions-heading" class="minutes-section card" data-section="actions">
+        <h2 id="quick-actions-heading">Quick actions</h2>
+        <nav class="quick-links">
+          <a href="#attendance-heading" class="pill-link">Attendance</a>
+          <a href="#agenda-heading" class="pill-link">Agenda</a>
+          <a href="#media-heading" class="pill-link">Media</a>
+          <a href="#diagrams-heading" class="pill-link">Diagrams</a>
+        </nav>
+        <p class="inline-chip">Status: draft minutes</p>
+        <p class="hidden-note">This hidden note demonstrates display none.</p>
+      </section>
+
+      <section aria-labelledby="task-board-heading" class="minutes-section card">
+        <h2 id="task-board-heading">Task board (flexbox)</h2>
+        <div class="task-board">
+          <article class="task-item" data-priority="high">
+            <h3>Urgent Formula Draft</h3>
+            <p>Rushil proposes the first urgency equation for due-soon and behind-schedule states.</p>
+          </article>
+          <article class="task-item" data-priority="medium">
+            <h3>Validation Rules</h3>
+            <p>Shruti and Sanjana align assignment field constraints and edge-case behavior.</p>
+          </article>
+          <article class="task-item" data-priority="low">
+            <h3>Presenter Boundaries</h3>
+            <p>Benjamin documents repository responsibilities to keep SQL details out of UI presenters.</p>
+          </article>
+        </div>
+      </section>
+
+      <section aria-labelledby="milestones-heading" class="minutes-section card">
+        <h2 id="milestones-heading">Milestones (grid)</h2>
+        <div class="milestone-grid">
+          <div class="milestone">Week 1<br><small>Core entities</small></div>
+          <div class="milestone">Week 2<br><small>Urgency dashboard</small></div>
+          <div class="milestone">Week 3<br><small>Data persistence</small></div>
+          <div class="milestone">Week 4<br><small>UI polish + tests</small></div>
+        </div>
+      </section>
     </main>
 
     <footer>
       <p><small>Minutes for Team 16 — Student Clock brainstorming (CSE 110).</small></p>
+      <a href="#page-top" class="back-to-top">Back to top</a>
     </footer>
   </body>
 </html>
