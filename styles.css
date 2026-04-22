@@ -1,0 +1,280 @@
+/* Lab 3 CSS checklist coverage stylesheet */
+:root {
+  --brand-accent: #3f37c9;
+  --surface: hsl(213, 50%, 98%);
+  --card-bg: color-mix(in srgb, white 82%, #4cc9f0 18%);
+  --text-main: color(display-p3 0.18 0.2 0.25 / 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #f5f8ff;
+  color: var(--text-main, #232733);
+  font-family: "Inter", Arial, sans-serif;
+  line-height: 1.5;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(63, 55, 201, 0.25);
+  padding: 1rem 4vw;
+}
+
+#page-top {
+  outline: 0;
+}
+
+h1,
+h2 {
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+h1 {
+  color: rgb(47, 61, 196);
+  margin: 0.25rem 0;
+}
+
+h2 {
+  margin: 0.5rem 0;
+}
+
+main {
+  width: min(94vw, 68rem);
+  margin: auto;
+  padding: 1rem 0 2rem 0;
+}
+
+/* Combined selector: element.class */
+section.minutes-section {
+  background-color: var(--surface);
+  max-width: 100%;
+  min-width: 16rem;
+  width: 100%;
+  position: relative;
+
+  /* Margin longhand */
+  margin-top: 0.85rem;
+  margin-right: 0;
+  margin-bottom: 0.85rem;
+  margin-left: 0;
+
+  /* Margin shorthand */
+  margin: 0.85rem 0 0.85rem 0;
+
+  /* Padding longhand */
+  padding-top: 1rem;
+  padding-right: 1.1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.1rem;
+
+  /* Padding shorthand */
+  padding: 1rem 1.1rem 1rem 1.1rem;
+
+  /* Border longhand */
+  border-style: solid;
+  border-color: #c7d3ff;
+  border-width: 1px;
+  border-radius: 0.7rem;
+
+  /* Border shorthand */
+  border: 1px solid #c7d3ff;
+}
+
+/* Selector list */
+h3,
+figcaption {
+  color: hsla(227, 42%, 26%, 0.95);
+}
+
+/* Descendant combinator */
+section ul {
+  padding-left: 1.6em;
+}
+
+/* Child combinator */
+main > section {
+  box-shadow: 0 2px 9px rgba(80, 102, 194, 0.11);
+}
+
+/* Adjacent sibling combinator */
+h2 + p {
+  text-align: left;
+}
+
+/* General sibling combinator */
+h3 ~ audio,
+h3 ~ video {
+  margin-top: 0.5rem;
+}
+
+/* Attribute selector */
+[data-priority="high"] {
+  border-left: 0.35rem solid orange;
+}
+
+/* Pseudo class selectors */
+.pill-link:hover {
+  background-color: #d9ddff;
+  text-decoration: underline;
+}
+
+.pill-link:active {
+  background-color: #bbc2ff;
+}
+
+a {
+  color: var(--brand-accent, blue);
+}
+
+.quick-links {
+  display: block;
+  margin: 0.4rem 0;
+}
+
+.pill-link {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #ebedff;
+  border: 1px solid #cdd2ff;
+  border-radius: 999px;
+  padding: 0.45rem 0.75rem;
+  margin-right: 0.35rem;
+  margin-bottom: 0.3rem;
+}
+
+.inline-chip {
+  display: inline;
+  background-color: #fef3c7;
+}
+
+.hidden-note {
+  display: none;
+}
+
+.task-board {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.task-item {
+  flex: 1 1 12rem;
+  background-color: var(--card-bg);
+  padding: 0.9rem;
+  border-radius: 0.55rem;
+}
+
+.milestone-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(9rem, 1fr));
+  gap: 0.75rem;
+  align-items: stretch;
+  justify-items: stretch;
+}
+
+.milestone {
+  background-color: #eef0ff;
+  border: 2px solid #cbd2ff;
+  border-radius: 8pt;
+  padding: 8px;
+  text-align: center;
+}
+
+figure {
+  margin: 0.8rem auto;
+  max-width: 48rem;
+}
+
+img,
+video {
+  width: 100%;
+  height: auto;
+  max-width: 640px;
+}
+
+audio {
+  width: 80%;
+}
+
+footer {
+  position: static;
+  text-align: center;
+  background-color: #e9efff;
+  padding: 1rem;
+  border-top: 2px solid #bdc8f8;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  background-color: #ffffff;
+  padding: 10px 14px;
+  border: 1px solid #9cadf8;
+  border-radius: 999px;
+}
+
+/* :has new selector from recent adoption */
+section:has(ul) {
+  background-color: color-mix(in srgb, #ffffff 86%, #dbe4ff 14%);
+}
+
+/* CSS nesting (newer syntax) */
+.card {
+  & > p {
+    color: #27306f;
+  }
+
+  & h3 {
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 900px) {
+  main {
+    width: 96vw;
+  }
+
+  .task-board {
+    flex-direction: column;
+  }
+
+  .milestone-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  header {
+    padding: 0.8rem 1rem;
+  }
+
+  .pill-link {
+    display: block;
+    margin-right: 0;
+  }
+
+  .back-to-top {
+    right: 0.7rem;
+    bottom: 0.7rem;
+  }
+}
+
+@media print {
+  body {
+    font-size: 11pt;
+  }
+
+  section.minutes-section {
+    border-width: 0.02in;
+  }
+}
