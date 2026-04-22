@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Clock — Brainstorming Meeting Minutes</title>
+  </head>
+  <body>
+    <header>
+      <h1>Student Clock First Brainstorm</h1>
+      <h2>Product scope, dashboard rules, and MVP architecture</h2>
+      <p>
+        <strong>Date:</strong>
+        <time datetime="2026-04-14">April 14, 2026</time>
+      </p>
+    </header>
+
+    <main>
+      <section aria-labelledby="attendance-heading">
+        <h2 id="attendance-heading">Attendance</h2>
+        <ul>
+          <li>Rushil Gupta (Team 16)</li>
+          <li>Shruti Senthilram</li>
+          <li>Sanjana Kalarickal</li>
+          <li>Benjamin Resnick</li>
+          <li>Derek Wadsworth</li>
+          <li>Neal Jian</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="agenda-heading">
+        <h2 id="agenda-heading">Agenda</h2>
+        <ol>
+          <li>Confirm the problem space: coursework organization, deadlines, and study-hour realism</li>
+          <li>Brainstorm core entities: terms, courses, series, and assignments</li>
+          <li>Draft dashboard rules for “urgent” work (due soon, behind schedule, effective due dates)</li>
+          <li>Sketch MVP direction: JavaFX UI, SQLite persistence, MVP layering (Model–View–Presenter)</li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="unfinished-heading">
+        <h2 id="unfinished-heading">Unfinished business (from last meeting)</h2>
+        <ul>
+          <li>Whether “Series” should own late policies and ordering for related assignments — <em>agreed: yes, series groups share policies and can enforce sequential expectations.</em></li>
+          <li>How to define “behind schedule” for progress indicators — <em>carry over: tie to estimated time, logged work, and time until due; Rushil to propose a first formula draft.</em></li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="new-business-heading">
+        <h2 id="new-business-heading">New business</h2>
+        <ul>
+          <li>Prototype weekly study-hour configuration and “remaining hours this week” behavior in the model.</li>
+          <li>Decide minimum fields for assignments (estimated time, start date, due date) and validation rules.</li>
+          <li>Outline the Big Picture visualization: what axes, what density is readable, and how it relates to the term overview.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="misc-heading">
+        <h2 id="misc-heading">Comments, questions, and concerns</h2>
+        <ul>
+          <li>Shruti asked how manual time entry and work logging stay consistent with dashboard urgency if users forget to log sessions.</li>
+          <li>Benjamin raised TestFX and UI stability: we should prefer stable node IDs over brittle selectors early.</li>
+          <li>Sanjana suggested documenting repository boundaries so SQLite details do not leak into presenters.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="media-heading">
+        <h2 id="media-heading">Meeting recordings</h2>
+        <p>
+          Below are sample media elements for practice with <code>audio</code> and <code>video</code>.
+          Sources are short, publicly hosted clips (not production meeting footage).
+        </p>
+        <h3>Audio excerpt</h3>
+        <audio controls>
+          <source src="https://download.samplelib.com/mp3/sample-3s.mp3" type="audio/mpeg">
+          Your browser does not support embedded audio. You can
+          <a href="https://download.samplelib.com/mp3/sample-3s.mp3">download the audio file</a>
+          instead.
+        </audio>
+        <h3>Video excerpt</h3>
+        <video controls width="640">
+          <source src="https://download.samplelib.com/mp4/sample-5s.mp4" type="video/mp4">
+          Your browser does not support embedded video. You can
+          <a href="https://download.samplelib.com/mp4/sample-5s.mp4">download the video file</a>
+          instead.
+        </video>
+      </section>
+
+      <section aria-labelledby="diagrams-heading">
+        <h2 id="diagrams-heading">Diagrams and materials from the meeting</h2>
+        <p>Whiteboard reference after the call (layering discussion for Student Clock):</p>
+        <figure>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/MVC-Process.svg/640px-MVC-Process.svg.png"
+            alt="Diagram showing flow between user, controller, model, and view in a layered UI architecture"
+            width="640"
+            height="411">
+          <figcaption>We mapped our MVP plan to a familiar pattern: keep domain rules in the Model, JavaFX views dumb, presenters coordinating updates—similar separation to this classic diagram.</figcaption>
+        </figure>
+        <p>Rough state-style sketch for assignment lifecycle and dashboard inputs:</p>
+        <figure>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Uml_state_chart.png/640px-Uml_state_chart.png"
+            alt="UML state chart diagram with rounded states and transition arrows"
+            width="640"
+            height="480">
+          <figcaption>Example state-chart style notes for not started, in progress, due soon, and overdue paths—used to sanity-check what the dashboard should highlight first.</figcaption>
+        </figure>
+      </section>
+    </main>
+
+    <footer>
+      <p><small>Minutes for Team 16 — Student Clock brainstorming (CSE 110).</small></p>
+    </footer>
+  </body>
+</html>
